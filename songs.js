@@ -1,41 +1,76 @@
-// song.js
-// Song list — audio files are in the root folder of the website
+window.AGOMONI_SONGS = {
 
-const songs = [
-  {
-    id: 1,
-    title: "Baja Sanai Aar Baja Re Dhol",
-    artist: "",
-    src: "./Baja_Sanai_Aar_Baja_Re_Dhol.mp3"
-  },
-  {
-    id: 2,
-    title: "Dugga Elo",
-    artist: "",
-    src: "./Dugga_Elo.mp3"
-  },
-  {
-    id: 3,
-    title: "Dugga Ma",
-    artist: "",
-    src: "./Dugga_Ma.mp3"
-  },
-  {
-    id: 4,
-    title: "Ebar Jeno Onno Rokom Pujo",
-    artist: "",
-    src: "./Ebar_Jeno_Onno_Rokom_Pujo.mp3"
-  },
-  {
-    id: 5,
-    title: "Shundori Komola",
-    artist: "",
-    src: "./Shundori_Komola.mp3"
-  }
-];
+  mahalaya: [
+    {
+      title: "মহালয়া – বীরেন্দ্রকৃষ্ণ ভদ্র",
+      file: "./mahalaya.mp3"
+    }
+  ],
 
-// Export for use in other files (works with plain <script> tags too,
-// since `songs` will just be a global variable if you don't use modules)
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = songs;
-}
+  durga: [
+    {
+      title: "Baja Sanai Aar Baja Re Dhol",
+      file: "./Baja Sanai Aar Baja Re Dhol.mp3"
+    },
+    {
+      title: "Durga Elo",
+      file: "./Durga Elo.mp3"
+    },
+    {
+      title: "Durga Ma",
+      file: "./Durga Ma.mp3"
+    },
+    {
+      title: "Ebar Jeno Onno Rokom Pujo",
+      file: "./Ebar Jeno Onno Rokom Pujo.mp3"
+    },
+    {
+      title: "Shundori Komola",
+      file: "./Shundori Komola.mp3"
+    }
+  ],
+
+  pandal: [
+    {
+      title: "Emon Madhur Sandhyay",
+      file: "./Emon Madhur Sandhyay.mp3"
+    },
+    {
+      title: "Katha Hoyechhilo",
+      file: "./Katha Hoyechhilo.mp3"
+    },
+    {
+      title: "Jete Jete Pathe Holo",
+      file: "./Jete Jete Pathe Holo.mp3"
+    },
+    {
+      title: "Tumi Kato Je Dure",
+      file: "./Tumi Kato Je Dure.mp3"
+    },
+    {
+      title: "Phire Elam Dure Giye",
+      file: "./Phire Elam Dure Giye.mp3"
+    },
+    {
+      title: "Kotha Kotha Khunjechhi Tomay",
+      file: "./Kotha Kotha Khunjechhi Tomay.mp3"
+    },
+    {
+      title: "Ekta Deshlai Kathi Jwalao",
+      file: "./Ekta Deshlai Kathi Jwalao.mp3"
+    },
+    {
+      title: "Mon Bolche Keu Asbe",
+      file: "./Mon Bolche Keu Asbe.mp3"
+    },
+    {
+      title: "Sandhya Belay Tumi Ami",
+      file: "./Sandhya Belay Tumi Ami.mp3"
+    },
+    {
+      title: "Pyar Hamen Kis Mod Pe - From Satte Pe Satta",
+      file: "./Pyar Hamen Kis Mod Pe - From Satte Pe Satta.mp3"
+    }
+  ]
+
+};

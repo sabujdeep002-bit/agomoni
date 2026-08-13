@@ -3,7 +3,7 @@ window.AGOMONI_SONGS = {
     { title: 'মহালয়া — বীরেন্দ্রকৃষ্ণ ভদ্র', file:',/mahalaya.mp3' }
   ],
   durga: [
-    { title: 'Baja Sanai Aar Baja Re Dhol', file: 'audio/দুর্গাপূজা%20OGs/Baja%20Sanai%20Aar%20Baja%20Re%20Dhol.mp3' },
+    { title: 'Baja Sanai Aar Baja Re Dhol', file: 'audio/দুর্গাপূজা%20OGs/Baja Sanai Aar Baja Re Dhol.mp3' },
     { title: 'Dugga Elo', file: 'audio/দুর্গাপূজা%20OGs/Dugga%20Elo.mp3' },
     { title: 'Dugga Ma', file: 'audio/দুর্গাপূজা%20OGs/Dugga%20Ma.mp3' },
     { title: 'Ebar Jeno Onno Rokom Pujo', file: 'audio/দুর্গাপূজা%20OGs/Ebar%20Jeno%20Onno%20Rokom%20Pujo.mp3' },

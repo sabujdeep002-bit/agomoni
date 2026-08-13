@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090705">
+<title>AGOMONI — Sabujdeep Parbat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#f7eddc;--muted:#eadcc4;--gold:#e6bd75;--line:rgba(255,244,224,.45)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090705;color:var(--ink)}
+body{font-family:"Noto Sans Bengali",system-ui,sans-serif}.app{position:relative;height:100svh;width:100%;overflow:hidden}
+.slides{height:100%;display:flex;transition:transform .68s cubic-bezier(.76,0,.2,1);touch-action:pan-y;will-change:transform}
+.slide{position:relative;min-width:100%;height:100%;overflow:hidden;background:#090705}
+.art{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
+/* No dark overlay/gradient: the supplied artwork remains visually unchanged. */
+.page-info{position:absolute;z-index:3;left:50%;top:clamp(42px,7vh,76px);transform:translateX(-50%);text-align:center;width:calc(100% - 40px);pointer-events:none}
+.kicker{font-size:10px;letter-spacing:.2em;color:var(--gold);margin-bottom:7px;text-transform:uppercase}
+h1{font-family:"Noto Serif Bengali","Noto Sans Bengali",serif;font-size:clamp(30px,4.5vw,56px);line-height:1.08;font-weight:600;letter-spacing:-.01em;margin:0;color:var(--ink);white-space:nowrap}
+/* No text shadow. */
+.player{position:fixed;z-index:20;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(700px,calc(100% - 28px));padding:9px 12px 10px;border:1px solid rgba(255,244,224,.34);border-radius:18px;background:rgba(8,6,4,.34);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.player-top{display:flex;align-items:center;gap:9px;min-width:0}.track-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}.track-name{font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track-page{font-size:9px;color:var(--muted);white-space:nowrap;margin-left:auto}
+.controls{display:flex;align-items:center;gap:7px;margin-top:7px}.controls button{font:inherit;color:var(--ink);border:1px solid rgba(255,244,224,.38);background:transparent;border-radius:50%;width:30px;height:30px;padding:0;display:grid;place-items:center;cursor:pointer}.controls button.play{width:34px;height:34px;border-color:rgba(230,189,117,.75);color:var(--gold)}
+.seek{flex:1;min-width:80px;height:4px;appearance:none;background:rgba(255,244,224,.25);border-radius:99px;outline:none}.seek::-webkit-slider-thumb{appearance:none;width:11px;height:11px;border-radius:50%;background:var(--gold)}.seek::-moz-range-thumb{width:11px;height:11px;border:0;border-radius:50%;background:var(--gold)}
+.time{font-size:9px;color:var(--muted);min-width:72px;text-align:right}.volume{width:70px;height:4px;appearance:none;background:rgba(255,244,224,.25);border-radius:99px}.volume::-webkit-slider-thumb{appearance:none;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.playlist{position:fixed;z-index:19;left:50%;bottom:115px;transform:translateX(-50%);width:min(700px,calc(100% - 28px));max-height:230px;overflow:auto;padding:8px;border:1px solid rgba(255,244,224,.25);border-radius:15px;background:rgba(8,6,4,.38);backdrop-filter:blur(12px);display:none}.playlist.open{display:block}.song{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:transparent;color:var(--ink);padding:9px 10px;border-radius:10px;cursor:pointer;font:500 11px "Noto Sans Bengali",sans-serif}.song:hover,.song.active{background:rgba(230,189,117,.13)}.song-num{color:var(--gold);width:22px}.song-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dots{position:fixed;z-index:25;left:50%;bottom:126px;transform:translateX(-50%);display:flex;gap:7px}.dots button{border:0;background:rgba(255,244,224,.6);width:7px;height:7px;border-radius:99px;padding:0;cursor:pointer}.dots button.active{width:24px;background:var(--gold)}
+.arrows{position:fixed;z-index:25;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px}.arrows button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:rgba(8,6,4,.18);color:var(--ink);cursor:pointer;font-size:20px;line-height:1}
+.brand{position:fixed;z-index:25;left:20px;top:18px;font-family:"Noto Serif Bengali",serif;font-size:14px;letter-spacing:.08em;color:var(--ink)}.brand span{display:block;font:9px "Noto Sans Bengali",sans-serif;letter-spacing:.12em;color:var(--muted);margin-top:1px}.insta{position:fixed;z-index:25;right:20px;top:18px;color:var(--ink);text-decoration:none;font-size:10px;border-bottom:1px solid rgba(255,244,224,.35);padding-bottom:2px}
+.credit{position:fixed;z-index:25;left:20px;bottom:18px;color:rgba(255,244,224,.72);font-size:9px}.source-note{position:fixed;z-index:25;right:20px;bottom:18px;color:rgba(255,244,224,.7);font-size:9px}
+@media(max-width:700px){.page-info{top:62px;width:calc(100% - 24px)}h1{font-size:clamp(26px,8.5vw,42px)}.player{width:calc(100% - 18px);bottom:max(8px,env(safe-area-inset-bottom));padding:8px 9px}.volume{display:none}.track-page{display:none}.controls button{width:28px;height:28px}.controls button.play{width:32px;height:32px}.dots{bottom:128px}.arrows{right:8px}.arrows button{width:28px;height:28px}.brand{left:12px;top:13px}.insta{right:12px;top:13px}.credit,.source-note{display:none}.playlist{bottom:112px;width:calc(100% - 18px);max-height:210px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="slides" id="slides"></div>
+  <div class="page-info"><div class="kicker" id="kicker"></div><h1 id="title"></h1></div>
+  <div class="brand">AGOMONI<span>একটি শরৎ-সুরের যাত্রা</span></div>
+  <a class="insta" href="https://www.instagram.com/its_mr_sabuj/" target="_blank" rel="noopener">@its_mr_sabuj</a>
+  <div class="dots" id="dots"></div>
+  <div class="arrows"><button id="up" aria-label="Previous">‹</button><button id="down" aria-label="Next">›</button></div>
+  <div class="playlist" id="playlist"></div>
+  <div class="player" id="player">
+    <div class="player-top"><span class="track-dot"></span><div class="track-name" id="trackName">মহালয়া — বীরেন্দ্রকৃষ্ণ ভদ্র</div><div class="track-page" id="trackPage">মহালয়া</div></div>
+    <div class="controls">
+      <button id="prevSong" aria-label="Previous song">‹‹</button>
+      <button class="play" id="play" aria-label="Play or pause">▶</button>
+      <button id="nextSong" aria-label="Next song">››</button>
+      <input class="seek" id="seek" type="range" min="0" max="100" value="0" aria-label="Seek">
+      <div class="time" id="time">0:00 / 0:00</div>
+      <input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+      <button id="list" aria-label="Playlist">☰</button>
+    </div>
+  </div>
+  <div class="credit">Created by Sabujdeep Parbat</div><div class="source-note">Scroll / swipe to explore</div>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script src="songs.js"></script>
+<script>
+const pages=[
+ {key:'mahalaya',title:'মহালয়া',kicker:'০১ · দেবীপক্ষ',image:'assets/mahalaya.jpg'},
+ {key:'durga',title:"দুর্গাপূজা OG's",kicker:'০২ · নস্টালজিয়া',image:'assets/durga-puja-ogs.jpg'},
+ {key:'pandal',title:'প্যান্ডেল vibe',kicker:'০৩ · কলকাতা',image:'assets/pandal-vibe.jpg'}
+];
+const slides=document.getElementById('slides'),dots=document.getElementById('dots'),titleEl=document.getElementById('title'),kickerEl=document.getElementById('kicker');
+const audio=document.getElementById('audio'),playBtn=document.getElementById('play'),seek=document.getElementById('seek'),volume=document.getElementById('volume'),timeEl=document.getElementById('time'),trackName=document.getElementById('trackName'),trackPage=document.getElementById('trackPage'),playlist=document.getElementById('playlist');
+let page=0, songIndex=0, wheelLock=false;
+pages.forEach((p,i)=>{const s=document.createElement('section');s.className='slide';s.innerHTML=`<div class="art" style="background-image:url('${p.image}')"></div>`;slides.appendChild(s);const d=document.createElement('button');d.setAttribute('aria-label',p.title);d.onclick=()=>go(i);dots.appendChild(d)});
+function currentSongs(){return window.AGOMONI_SONGS[pages[page].key]||[]}
+function format(t){if(!Number.isFinite(t))return '0:00';const m=Math.floor(t/60),s=Math.floor(t%60).toString().padStart(2,'0');return `${m}:${s}`}
+function renderPlaylist(){playlist.innerHTML='';currentSongs().forEach((s,i)=>{const b=document.createElement('button');b.className='song'+(i===songIndex?' active':'');b.innerHTML=`<span class="song-num">${String(i+1).padStart(2,'0')}</span><span class="song-title">${s.title}</span>`;b.onclick=()=>loadSong(i,true);playlist.appendChild(b)})}
+function loadSong(i,autoplay=false){const list=currentSongs();if(!list.length)return;songIndex=(i+list.length)%list.length;const s=list[songIndex];audio.src=s.file;audio.load();trackName.textContent=s.title;trackPage.textContent=pages[page].title;renderPlaylist();if(autoplay){audio.play().catch(()=>{});}else{playBtn.textContent='▶';seek.value=0;timeEl.textContent='0:00 / 0:00'}}
+function renderPage(){titleEl.textContent=pages[page].title;kickerEl.textContent=pages[page].kicker;[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===page));renderPlaylist()}
+function go(i){page=(i+pages.length)%pages.length;slides.style.transform=`translateX(-${page*100}%)`;songIndex=0;renderPage();/* Keep the global song playing while changing slides. */}
+function nextSong(){loadSong(songIndex+1,true)}function prevSong(){loadSong(songIndex-1,true)}
+playBtn.onclick=()=>{if(!audio.src)loadSong(0,false);if(audio.paused)audio.play().catch(()=>{});else audio.pause()};
+document.getElementById('nextSong').onclick=nextSong;document.getElementById('prevSong').onclick=prevSong;document.getElementById('list').onclick=()=>playlist.classList.toggle('open');
+volume.oninput=()=>audio.volume=Number(volume.value);seek.oninput=()=>{if(audio.duration)audio.currentTime=(Number(seek.value)/100)*audio.duration};
+audio.addEventListener('play',()=>playBtn.textContent='❚❚');audio.addEventListener('pause',()=>playBtn.textContent='▶');audio.addEventListener('timeupdate',()=>{if(audio.duration){seek.value=(audio.currentTime/audio.duration)*100;timeEl.textContent=`${format(audio.currentTime)} / ${format(audio.duration)}`}});audio.addEventListener('ended',nextSong);audio.addEventListener('loadedmetadata',()=>timeEl.textContent=`0:00 / ${format(audio.duration)}`);
+document.getElementById('up').onclick=()=>go(page-1);document.getElementById('down').onclick=()=>go(page+1);
+window.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(page-1);if(e.key==='ArrowRight')go(page+1)});
+window.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)<12||wheelLock)return;if(e.target.closest('#player')||e.target.closest('#playlist'))return;wheelLock=true;go(page+(e.deltaY>0?1:-1));setTimeout(()=>wheelLock=false,720)},{passive:true});
+let sx=0,sy=0;slides.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});slides.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(page+(dx<0?1:-1));else if(Math.abs(dy)>60&&Math.abs(dy)>Math.abs(dx))go(page+(dy<0?1:-1))},{passive:true});
+renderPage();loadSong(0,false);audio.volume=1;
+</script>
+</body></html>

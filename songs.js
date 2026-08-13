@@ -10,11 +10,11 @@ window.AGOMONI_SONGS = {
   durga: [
     {
       title: "Baja Sanai Aar Baja Re Dhol",
-      file: ./Baja-Sanai-Aar-Baja-Re-Dhol.mp3"
+      file: ./Baja Sanai Aar Baja Re Dhol.mp3"
     },
     {
       title: "Durga Elo",
-      file: ./Durga-Elo.mp3"
+      file: ./Durga Elo.mp3"
     },
     {
       title: "Dugga Ma",

@@ -13,12 +13,12 @@ window.AGOMONI_SONGS = {
       file: "./Baja Sanai Aar Baja Re Dhol.mp3"
     },
     {
-      title: "Durga Elo",
-      file: "./Durga Elo.mp3"
+      title: "Dugga Elo",
+      file: "./Dugga Elo.mp3"
     },
     {
-      title: "Durga Ma",
-      file: "./Durga Ma.mp3"
+      title: "Dugga Ma",
+      file: "./Dugga Ma.mp3"
     },
     {
       title: "Ebar Jeno Onno Rokom Pujo",
@@ -32,44 +32,44 @@ window.AGOMONI_SONGS = {
 
   pandal: [
     {
-      title: "Emon Madhur Sandhyay",
-      file: "./Emon Madhur Sandhyay.mp3"
+      title: "Ekta Deshlai Kathi Jwalao",
+      file: "./Ekta Deshlai Kathi Jwalao.mp3"
     },
     {
-      title: "Katha Hoyechhilo",
-      file: "./Katha Hoyechhilo.mp3"
+      title: "Emon Madhur Sandhyay",
+      file: "./Emon Madhur Sandhyay.mp3"
     },
     {
       title: "Jete Jete Pathe Holo",
       file: "./Jete Jete Pathe Holo.mp3"
     },
     {
-      title: "Tumi Kato Je Dure",
-      file: "./Tumi Kato Je Dure.mp3"
-    },
-    {
-      title: "Phire Elam Dure Giye",
-      file: "./Phire Elam Dure Giye.mp3"
+      title: "Katha Hoyechhilo",
+      file: "./Katha Hoyechhilo.mp3"
     },
     {
       title: "Kotha Kotha Khunjechhi Tomay",
       file: "./Kotha Kotha Khunjechhi Tomay.mp3"
     },
     {
-      title: "Ekta Deshlai Kathi Jwalao",
-      file: "./Ekta Deshlai Kathi Jwalao.mp3"
-    },
-    {
       title: "Mon Bolche Keu Asbe",
       file: "./Mon Bolche Keu Asbe.mp3"
+    },
+    {
+      title: "Phire Elam Dure Giye",
+      file: "./Phire Elam Dure Giye.mp3"
+    },
+    {
+      title: "Pyar Hamen Kis Mod Pe - From Satte Pe Satta",
+      file: "./Pyar Hamen Kis Mod Pe - From Satte Pe Satta.mp3"
     },
     {
       title: "Sandhya Belay Tumi Ami",
       file: "./Sandhya Belay Tumi Ami.mp3"
     },
     {
-      title: "Pyar Hamen Kis Mod Pe - From Satte Pe Satta",
-      file: "./Pyar Hamen Kis Mod Pe - From Satte Pe Satta.mp3"
+      title: "Tumi Kato Je Dure",
+      file: "./Tumi Kato Je Dure.mp3"
     }
   ]
 

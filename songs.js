@@ -3,14 +3,14 @@ window.AGOMONI_SONGS = {
   mahalaya: [
     {
       title: "মহালয়া — বীরেন্দ্রকৃষ্ণ ভদ্র",
-      file: ./mahalaya.mp3"
+      file: ,/mahalaya.mp3"
     }
   ],
 
   durga: [
     {
       title: "Baja Sanai Aar Baja Re Dhol",
-      file: ./Baja Sanai Aar Baja Re Dhol.mp3"
+      file: ,/Baja Sanai Aar Baja Re Dhol.mp3"
     },
     {
       title: "Dugga Elo",

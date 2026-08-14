@@ -1,139 +1,277 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#090707" />
-  <title>AGOMONI — A Bengali Puja Music Journey</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#090707;--cream:#f5ead6;--gold:#d8ad63;--muted:#c7b9a3;--glass:rgba(9,7,7,.64)}
-    *{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:var(--cream);font-family:Inter,system-ui,sans-serif}
-    body{overflow:hidden}
-    .app{height:100svh;position:relative;background:#090707}
-    .slides{height:100%;display:flex;transition:transform .72s cubic-bezier(.77,0,.18,1);touch-action:pan-y}
-    .slide{min-width:100%;height:100%;position:relative;overflow:hidden}
-    .art{position:absolute;inset:0;background:center/cover no-repeat;filter:saturate(.9) contrast(1.04)}
-    .art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,4,4,.88) 0%,rgba(5,4,4,.42) 45%,rgba(5,4,4,.18) 100%),linear-gradient(0deg,rgba(5,4,4,.9) 0%,transparent 36%)}
-    .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,7vw,96px);padding-bottom:190px;max-width:920px}
-    .eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:16px}
-    h1{font:600 clamp(52px,9vw,118px)/.82 "Cormorant Garamond",serif;letter-spacing:-.025em;margin:0 0 20px;text-shadow:0 5px 30px #000}
-    .subtitle{font:500 clamp(16px,2vw,23px)/1.4 "Cormorant Garamond",serif;color:#f4e8d3;max-width:560px}
-    .source-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-    button,.source-link{border:1px solid rgba(245,234,214,.25);background:rgba(15,12,10,.62);backdrop-filter:blur(12px);color:var(--cream);padding:11px 15px;border-radius:999px;cursor:pointer;font:500 12px Inter;text-decoration:none}
-    button.active,.source-link:hover{background:rgba(216,173,99,.18);border-color:rgba(216,173,99,.75)}
-    .player{position:fixed;z-index:20;left:50%;bottom:18px;transform:translateX(-50%);width:min(900px,calc(100% - 28px));background:rgba(10,8,7,.86);border:1px solid rgba(245,234,214,.16);border-radius:22px;padding:10px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
-    .player-head{display:flex;align-items:center;gap:12px;padding:2px 8px 8px}.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px var(--gold)}
-    .now{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now small{display:block;color:#a99c89;font-size:10px;margin-top:2px}
-    .embed{height:80px;overflow:hidden;border-radius:14px;background:#111}.embed iframe{width:100%;height:100%;border:0}
-    .nav{position:fixed;z-index:25;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px}
-    .nav button{width:34px;height:34px;padding:0;border-radius:50%;display:grid;place-items:center}
-    .dots{position:fixed;z-index:25;left:50%;top:24px;transform:translateX(-50%);display:flex;gap:8px}.dots button{width:7px;height:7px;padding:0;border:0;background:#8e8375}.dots button.active{width:24px;border-radius:10px;background:var(--gold)}
-    .insta{position:fixed;z-index:30;left:24px;top:24px;color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.08em;padding:10px 13px;border:1px solid rgba(245,234,214,.18);border-radius:999px;background:rgba(9,7,7,.45);backdrop-filter:blur(10px)}
-    .credit{position:fixed;z-index:25;right:28px;top:28px;color:rgba(245,234,214,.68);font:12px "Cormorant Garamond",serif}
-    .hint{position:fixed;z-index:5;right:70px;bottom:126px;color:rgba(245,234,214,.65);font-size:10px;letter-spacing:.08em}
-    @media(max-width:700px){
-      .art:after{background:linear-gradient(0deg,rgba(5,4,4,.96) 0%,rgba(5,4,4,.48) 55%,rgba(5,4,4,.15) 100%)}
-      .content{padding:72px 22px 190px;justify-content:flex-end}
-      h1{font-size:64px}.subtitle{font-size:18px}.credit{display:none}.insta{left:auto;right:18px;top:18px}
-      .nav{right:10px;top:50%;}.nav button{width:30px;height:30px}
-      .dots{top:20px}.hint{display:none}.player{bottom:10px;width:calc(100% - 18px);border-radius:18px}.embed{height:74px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090705">
+<title>AGOMONI — Sabujdeep Parbat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--ink:#f7eddc;--muted:#eadcc4;--gold:#e6bd75}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090705;color:var(--ink)}
+body{font-family:"Noto Sans Bengali",system-ui,sans-serif}
+.app{position:relative;height:100svh;width:100%;overflow:hidden}
+.slides{height:100%;display:flex;transition:transform .68s cubic-bezier(.76,0,.2,1);touch-action:pan-y}
+.slide{position:relative;min-width:100%;height:100%;overflow:hidden;background:#090705}
+.art{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
+.art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,4,4,.78),rgba(5,4,4,.25) 65%,rgba(5,4,4,.12)),linear-gradient(0deg,rgba(5,4,4,.75),transparent 45%)}
+.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:7vw;padding-bottom:170px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:14px}
+h1{font:600 clamp(48px,9vw,110px)/.9 "Noto Serif Bengali",serif;margin:0 0 18px;text-shadow:0 5px 25px #000}
+.subtitle{font-size:16px;line-height:1.5;max-width:560px;color:#f4e8d3}
+.dots{position:fixed;z-index:30;left:50%;top:22px;transform:translateX(-50%);display:flex;gap:7px}
+.dots button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#9d927f}
+.dots button.active{width:22px;border-radius:8px;background:var(--gold)}
+.nav{position:fixed;z-index:30;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px}
+.nav button{width:32px;height:32px;padding:0;border-radius:50%;background:rgba(15,12,10,.25);border:1px solid rgba(255,244,224,.22);color:var(--ink);font-size:20px}
+.credit{position:fixed;z-index:30;right:22px;top:20px;font-size:11px;color:rgba(245,234,214,.65)}
+.insta{position:fixed;z-index:30;left:18px;top:18px;color:var(--ink);text-decoration:none;font-size:11px;padding:8px 11px;border:1px solid rgba(245,234,214,.2);border-radius:999px;background:rgba(9,7,7,.25);backdrop-filter:blur(8px)}
+
+.player{position:fixed;z-index:40;left:50%;bottom:14px;transform:translateX(-50%);width:min(620px,calc(100% - 24px));padding:9px 11px;border:1px solid rgba(255,244,224,.18);border-radius:18px;background:rgba(12,9,7,.28);backdrop-filter:blur(18px);box-shadow:0 12px 35px rgba(0,0,0,.25)}
+.player-top{display:flex;align-items:center;gap:9px}
+.play{width:34px;height:34px;padding:0;border-radius:50%;display:grid;place-items:center;background:rgba(230,189,117,.16);border:1px solid rgba(230,189,117,.45);color:var(--ink);font-size:13px}
+.ctrl{display:flex;gap:4px}
+.ctrl button{width:27px;height:27px;padding:0;border-radius:50%;background:transparent;border:1px solid rgba(255,244,224,.15);color:var(--ink);font-size:12px}
+.track{min-width:0;flex:1}
+.track-title{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-page{font-size:9px;color:rgba(245,234,214,.55);margin-top:1px}
+.seek{width:100%;height:3px;margin-top:7px;accent-color:var(--gold);cursor:pointer}
+.time{font-size:9px;color:rgba(245,234,214,.55);white-space:nowrap}
+.list{position:relative}
+.list-panel{display:none;position:absolute;bottom:42px;right:0;width:min(300px,70vw);max-height:230px;overflow:auto;padding:7px;border:1px solid rgba(255,244,224,.16);border-radius:14px;background:rgba(12,9,7,.72);backdrop-filter:blur(18px)}
+.list.open .list-panel{display:block}
+.song{display:flex;gap:8px;width:100%;padding:8px;border:0;border-radius:9px;background:transparent;color:var(--ink);text-align:left;font-size:10px}
+.song:hover,.song.active{background:rgba(230,189,117,.13)}
+.song-num{color:var(--gold);min-width:20px}
+.song-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.volume{width:65px;accent-color:var(--gold)}
+
+@media(max-width:700px){
+  .content{padding:70px 22px 145px;justify-content:flex-end}
+  h1{font-size:58px}.subtitle{font-size:14px}
+  .credit{display:none}
+  .player{bottom:9px;width:calc(100% - 14px);border-radius:15px;padding:7px 8px}
+  .volume{display:none}.time{display:none}
+  .ctrl button{width:25px;height:25px}
+}
+</style>
 </head>
+
 <body>
 <div class="app">
   <div class="slides" id="slides"></div>
   <div class="dots" id="dots"></div>
+
   <div class="nav">
     <button id="prev" aria-label="Previous">‹</button>
     <button id="next" aria-label="Next">›</button>
   </div>
+
   <a class="insta" href="https://www.instagram.com/its_mr_sabuj/" target="_blank" rel="noopener">◎ @its_mr_sabuj</a>
   <div class="credit">Created by Sabujdeep Parbat</div>
-  <div class="hint">SWIPE / ARROWS</div>
-  <div class="player">
-    <div class="player-head">
-      <span class="dot"></span>
-      <div class="now" id="now">Mahalaya · choose a source<small>Music plays inside AGOMONI</small></div>
+
+  <div class="player" id="player">
+    <div class="player-top">
+      <div class="ctrl">
+        <button id="prevSong">‹</button>
+        <button class="play" id="playBtn">▶</button>
+        <button id="nextSong">›</button>
+      </div>
+
+      <div class="track">
+        <div class="track-title" id="trackName">Choose a song</div>
+        <div class="track-page" id="trackPage">AGOMONI</div>
+        <input class="seek" id="seek" type="range" min="0" max="100" value="0">
+      </div>
+
+      <div class="time" id="timeEl">0:00 / 0:00</div>
+
+      <div class="list" id="list">
+        <button id="listBtn">☰</button>
+        <div class="list-panel" id="playlist"></div>
+      </div>
+
+      <input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="1">
     </div>
-    <div class="embed" id="embed"></div>
   </div>
 </div>
+
+<audio id="audio" preload="metadata"></audio>
+
+<script src="./songs.js"></script>
 <script>
-const pages = [
-  {
-    title:"Mahalaya", label:"01 · Devi Paksha", image:"assets/mahalaya.jpg",
-    subtitle:"The call of dawn, agomoni, and the first breath of Sharodotsav.",
-    sources:[
-      {name:"Spotify", type:"spotify", id:"0fSbstl6ete0y6agTlGwkU"},
-      {name:"YouTube", type:"youtube", id:"A-nMCu2y_PM"}
-    ]
-  },
-  {
-    title:"Durga Puja OG's", label:"02 · Nostalgia", image:"assets/durga-puja-ogs.jpg",
-    subtitle:"Old-school Puja songs, familiar streets, and the sound of childhood.",
-    sources:[{name:"Spotify", type:"spotify", id:"7yDMyLZsCzpd2UgO0pSW6X"}]
-  },
-  {
-    title:"Pandal Vibe", label:"03 · Kolkata", image:"assets/pandal-vibe.jpg",
-    subtitle:"Pandal hopping, lights, crowds, dhak, and the restless city at Puja.",
-    sources:[{name:"Spotify", type:"spotify", id:"7eLFS04AG2Cs78UIEJ5gto"}]
-  },
-  {
-    title:"Pujo Banger", label:"04 · Pujo Banger", image:"assets/pujo-banger.jpg",
-    subtitle:"The beats, energy, colours, and unforgettable madness of Puja.",
-    sources:[]
-  },
-  {
-    title:"বিজয়া", label:"05 · Farewell", image:"assets/bijoya.jpg",
-    subtitle:"The final moments of Puja, the farewell, and the promise: Asche bochor abar hobe.",
-    sources:[]
-  }
+const pages=[
+ {key:"mahalaya",title:"মহালয়া",kicker:"01 · Devi Paksha",image:"./assets/mahalaya.jpg",subtitle:"The call of dawn, agomoni, and the first breath of Sharodotsav."},
+ {key:"durga",title:"দুর্গাপূজা OG's",kicker:"02 · Nostalgia",image:"./assets/durga-puja-ogs.jpg",subtitle:"Old-school Puja songs, familiar streets, and the sound of childhood."},
+ {key:"pandal",title:"প্যান্ডেল Vibe",kicker:"03 · Kolkata",image:"./assets/pandal-vibe.jpg",subtitle:"Lights, crowds, dhak, pandal hopping, and the restless city at Puja."},
+ {key:"banger",title:"পুজো Banger",kicker:"04 · Beats",image:"./assets/pujo-banger.jpg",subtitle:"The loudest beats, colours, energy and Puja madness."},
+ {key:"bijoya",title:"বিজয়া",kicker:"05 · Farewell",image:"./assets/bijoya.jpg",subtitle:"The final moments of Puja — farewell, memories and Asche bochor abar hobe."}
 ];
-let current=0, sourceIndex=0;
-const slides=document.getElementById("slides"), dots=document.getElementById("dots"), embed=document.getElementById("embed"), now=document.getElementById("now");
+
+const slides=document.getElementById("slides");
+const dots=document.getElementById("dots");
+const audio=document.getElementById("audio");
+const playBtn=document.getElementById("playBtn");
+const prevSongBtn=document.getElementById("prevSong");
+const nextSongBtn=document.getElementById("nextSong");
+const list=document.getElementById("list");
+const playlist=document.getElementById("playlist");
+const trackName=document.getElementById("trackName");
+const trackPage=document.getElementById("trackPage");
+const seek=document.getElementById("seek");
+const timeEl=document.getElementById("timeEl");
+const volume=document.getElementById("volume");
+
+let page=0,songIndex=0,wheelLock=false;
 
 pages.forEach((p,i)=>{
-  const s=document.createElement("section"); s.className="slide";
+  const s=document.createElement("section");
+  s.className="slide";
   s.innerHTML=`<div class="art" style="background-image:url('${p.image}')"></div>
-    <div class="content"><div class="eyebrow">${p.label}</div><h1>${p.title}</h1><div class="subtitle">${p.subtitle}</div>
-    <div class="source-row" id="sources-${i}"></div></div>`;
+  <div class="content">
+    <div class="eyebrow">${p.kicker}</div>
+    <h1>${p.title}</h1>
+    <div class="subtitle">${p.subtitle}</div>
+  </div>`;
   slides.appendChild(s);
-  const d=document.createElement("button"); d.setAttribute("aria-label","Go to "+p.title); d.onclick=()=>go(i); dots.appendChild(d);
-  p.sources.forEach((src,j)=>{
-    const b=document.createElement("button"); b.textContent=src.name; b.onclick=()=>setSource(i,j); document.getElementById(`sources-${i}`).appendChild(b);
-  });
+
+  const d=document.createElement("button");
+  d.setAttribute("aria-label",p.title);
+  d.onclick=()=>go(i);
+  dots.appendChild(d);
 });
-function go(i){current=(i+pages.length)%pages.length; sourceIndex=0; slides.style.transform=`translateX(-${current*100}%)`; [...dots.children].forEach((d,n)=>d.classList.toggle("active",n===current)); renderSource();}
-function setSource(i,j){current=i;sourceIndex=j;slides.style.transform=`translateX(-${current*100}%)`;[...dots.children].forEach((d,n)=>d.classList.toggle("active",n===current));renderSource();}
-function renderSource(){
-  const p=pages[current];
-  [...document.querySelectorAll(".source-row button")].forEach(b=>b.classList.remove("active"));
-  const row=document.getElementById(`sources-${current}`);
-  if(!p.sources || !p.sources.length){
-    now.innerHTML=`${p.title}<small>Songs will be added later</small>`;
-    embed.innerHTML="";
+
+function currentSongs(){return window.AGOMONI_SONGS?.[pages[page].key]||[]}
+function format(t){
+  if(!Number.isFinite(t))return"0:00";
+  const m=Math.floor(t/60),s=Math.floor(t%60).toString().padStart(2,"0");
+  return`${m}:${s}`;
+}
+
+function renderPlaylist(){
+  playlist.innerHTML="";
+  const songs=currentSongs();
+
+  if(!songs.length){
+    playlist.innerHTML='<div style="padding:12px;font-size:10px;color:#c7b9a3">Songs will be added soon.</div>';
     return;
   }
-  const src=p.sources[sourceIndex];
-  if(row && row.children[sourceIndex]) row.children[sourceIndex].classList.add("active");
-  now.innerHTML=`${p.title} · ${src.name}<small>Official embedded playback</small>`;
-  if(src.type==="spotify"){
-    embed.innerHTML=`<iframe src="https://open.spotify.com/embed/playlist/${src.id}?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="eager"></iframe>`;
-  }else{
-    embed.innerHTML=`<iframe src="https://www.youtube.com/embed/${src.id}?rel=0&modestbranding=1" title="Mahalaya" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+
+  songs.forEach((s,i)=>{
+    const b=document.createElement("button");
+    b.className="song"+(i===songIndex?" active":"");
+    b.innerHTML=`<span class="song-num">${String(i+1).padStart(2,"0")}</span><span class="song-title">${s.title}</span>`;
+    b.onclick=()=>loadSong(i,true);
+    playlist.appendChild(b);
+  });
+}
+
+function loadSong(i,autoplay=false){
+  const songs=currentSongs();
+  if(!songs.length){
+    audio.removeAttribute("src");
+    trackName.textContent="No songs yet";
+    trackPage.textContent=pages[page].title;
+    playBtn.textContent="▶";
+    seek.value=0;
+    timeEl.textContent="0:00 / 0:00";
+    renderPlaylist();
+    return;
+  }
+
+  songIndex=(i+songs.length)%songs.length;
+  const s=songs[songIndex];
+
+  audio.src=s.file;
+  audio.load();
+  trackName.textContent=s.title;
+  trackPage.textContent=pages[page].title;
+  renderPlaylist();
+
+  if(autoplay) audio.play().catch(()=>{});
+  else{
+    playBtn.textContent="▶";
+    seek.value=0;
+    timeEl.textContent="0:00 / 0:00";
   }
 }
-document.getElementById("prev").onclick=()=>go(current-1);
-document.getElementById("next").onclick=()=>go(current+1);
-let startX=0,startY=0;
-document.getElementById("slides").addEventListener("touchstart",e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY},{passive:true});
-document.getElementById("slides").addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy))go(current+(dx<0?1:-1))},{passive:true});
-window.addEventListener("keydown",e=>{if(e.key==="ArrowRight")go(current+1);if(e.key==="ArrowLeft")go(current-1)});
-go(0);
+
+function renderPage(){
+  [...dots.children].forEach((d,i)=>d.classList.toggle("active",i===page));
+  renderPlaylist();
+  loadSong(0,false);
+}
+
+function go(i){
+  page=(i+pages.length)%pages.length;
+  slides.style.transform=`translateX(-${page*100}%)`;
+  songIndex=0;
+  renderPage();
+}
+
+function nextSong(){loadSong(songIndex+1,true)}
+function prevSong(){loadSong(songIndex-1,true)}
+
+playBtn.onclick=()=>{
+  if(!currentSongs().length)return;
+  if(!audio.src)loadSong(0,false);
+  if(audio.paused)audio.play().catch(()=>{});
+  else audio.pause();
+};
+
+nextSongBtn.onclick=nextSong;
+prevSongBtn.onclick=prevSong;
+document.getElementById("listBtn").onclick=()=>list.classList.toggle("open");
+
+volume.oninput=()=>audio.volume=Number(volume.value);
+seek.oninput=()=>{if(audio.duration)audio.currentTime=(Number(seek.value)/100)*audio.duration};
+
+audio.addEventListener("play",()=>playBtn.textContent="❚❚");
+audio.addEventListener("pause",()=>playBtn.textContent="▶");
+audio.addEventListener("timeupdate",()=>{
+  if(audio.duration){
+    seek.value=(audio.currentTime/audio.duration)*100;
+    timeEl.textContent=`${format(audio.currentTime)} / ${format(audio.duration)}`;
+  }
+});
+audio.addEventListener("ended",nextSong);
+audio.addEventListener("loadedmetadata",()=>timeEl.textContent=`0:00 / ${format(audio.duration)}`);
+
+document.getElementById("prev").onclick=()=>go(page-1);
+document.getElementById("next").onclick=()=>go(page+1);
+
+window.addEventListener("keydown",e=>{
+  if(e.key==="ArrowLeft")go(page-1);
+  if(e.key==="ArrowRight")go(page+1);
+});
+
+window.addEventListener("wheel",e=>{
+  if(Math.abs(e.deltaY)<12||wheelLock)return;
+  if(e.target.closest("#player")||e.target.closest("#playlist"))return;
+  wheelLock=true;
+  go(page+(e.deltaY>0?1:-1));
+  setTimeout(()=>wheelLock=false,720);
+},{passive:true});
+
+let sx=0,sy=0;
+slides.addEventListener("touchstart",e=>{
+  sx=e.touches[0].clientX;
+  sy=e.touches[0].clientY;
+},{passive:true});
+
+slides.addEventListener("touchend",e=>{
+  const dx=e.changedTouches[0].clientX-sx;
+  const dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(page+(dx<0?1:-1));
+  else if(Math.abs(dy)>60&&Math.abs(dy)>Math.abs(dx))go(page+(dy<0?1:-1));
+},{passive:true});
+
+renderPage();
+audio.volume=1;
 </script>
 </body>
 </html>

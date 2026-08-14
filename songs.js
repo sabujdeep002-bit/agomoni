@@ -97,7 +97,7 @@ window.AGOMONI_SONGS = {
 
     {
       title: "Gouri Elo (From Raktabeej)",
-      file: "./ab/Gouri Elo (From Raktabeej)_spotdown.org.mp3"
+      file: "./ab/Gouri Elo (From _Raktabeej_)_spotdown.org.mp3"
     },
 
     {

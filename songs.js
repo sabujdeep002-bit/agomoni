@@ -35,7 +35,7 @@ window.AGOMONI_SONGS = {
     }
   ],
 
- pandal: [
+pandal: [
     {
       title: "Ekta Deshlai Kathi Jwalao",
       file: "./Ekta Deshlai Kathi Jwalao.mp3"

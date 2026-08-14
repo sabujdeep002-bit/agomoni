@@ -8,6 +8,7 @@ window.AGOMONI_SONGS = {
   ],
 
   durga: [
+
     {
       title: "Baja Sanai Aar Baja Re Dhol",
       file: "./Baja Sanai Aar Baja Re Dhol.mp3"
@@ -33,14 +34,16 @@ window.AGOMONI_SONGS = {
       file: "./Shundori Komola.mp3"
     },
 
+    /* ===== SS FOLDER ===== */
+
     {
       title: "Aaj Baaje",
       file: "./ss/Aaj Baaje_spotdown.org.mp3"
     },
 
     {
-      title: "Aamaar Dugga",
-      file: "./ss/Aamaar Dugga_spotdown.org.mp3"
+      title: "Aambar Dugga",
+      file: "./ss/Aambar Dugga_spotdown.org.mp3"
     },
 
     {
@@ -51,10 +54,71 @@ window.AGOMONI_SONGS = {
     {
       title: "Ailo Uma Barite",
       file: "./ss/Ailo Uma Barite_spotdown.org.mp3"
+    },
+
+    /* ===== AA FOLDER ===== */
+
+    {
+      title: "Baja Sanai Aar Baja Re Dhol",
+      file: "./aa/Baja Sanai Aar Baja Re Dhol_spotdown.org.mp3"
+    },
+
+    {
+      title: "Bolo Dugga Elo",
+      file: "./aa/Bolo Dugga Elo_spotdown.org.mp3"
+    },
+
+    {
+      title: "Chaarpashe Aalo Hok",
+      file: "./aa/Chaarpashe Aalo Hok_spotdown.org.mp3"
+    },
+
+    {
+      title: "Dhak Bajao Komor Nacha",
+      file: "./aa/Dhak Bajao Komor Nacha_spotdown.org.mp3"
+    },
+
+    {
+      title: "Dhak Baja Kashor Baja",
+      file: "./aa/Dhak Baja Kashor Baja_spotdown.org.mp3"
+    },
+
+    /* ===== AB FOLDER ===== */
+
+    {
+      title: "Dhaker Taley",
+      file: "./ab/Dhaker Taley_spotdown.org.mp3"
+    },
+
+    {
+      title: "Dugga Ma Asche",
+      file: "./ab/Dugga Ma Asche_spotdown.org.mp3"
+    },
+
+    {
+      title: "Gouri Elo (From Raktabeej)",
+      file: "./ab/Gouri Elo (From Raktabeej)_spotdown.org.mp3"
+    },
+
+    {
+      title: "Jago Uma",
+      file: "./ab/Jago Uma_spotdown.org.mp3"
+    },
+
+    {
+      title: "Maa Aashchhe - From Maa Aashchhe",
+      file: "./ab/Maa Aashchhe - From Maa Aashchhe_spotdown.org.mp3"
+    },
+
+    {
+      title: "Maa Go Tui",
+      file: "./ab/Maa Go Tui_spotdown.org.mp3"
     }
+
   ],
 
   pandal: [
+
     {
       title: "Ekta Deshlai Kathi Jwalao",
       file: "./Ekta Deshlai Kathi Jwalao.mp3"
@@ -109,6 +173,7 @@ window.AGOMONI_SONGS = {
       title: "Tumi Kato Je Dure",
       file: "./Tumi Kato Je Dure.mp3"
     }
+
   ]
 
 };

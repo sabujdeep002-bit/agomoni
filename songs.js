@@ -39,8 +39,8 @@ window.AGOMONI_SONGS = {
     },
 
     {
-      title: "Aambar Dugga",
-      file: "./ss/Aambar Dugga_spotdown.org.mp3"
+      title: "Aamaar Dugga",
+      file: "./ss/Aamaar Dugga_spotdown.org.mp3"
     },
 
     {

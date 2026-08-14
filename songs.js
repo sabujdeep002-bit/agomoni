@@ -113,6 +113,43 @@ window.AGOMONI_SONGS = {
     {
       title: "Maa Go Tui",
       file: "./ab/Maa Go Tui_spotdown.org.mp3"
+    },
+
+    /* ===== AC FOLDER ===== */
+
+    {
+      title: "Elo Maa Dugga",
+      file: "./ac/Elo Maa Dugga_spotdown.org.mp3"
+    },
+
+    {
+      title: "Elo Re Pujo Elo",
+      file: "./ac/Elo Re Pujo Elo_spotdown.org.mp3"
+    },
+
+    {
+      title: "Joy Joy Durga Maa",
+      file: "./ac/Joy Joy Durga Maa_spotdown.org.mp3"
+    },
+
+    {
+      title: "Kolki",
+      file: "./ac/Kolki_spotdown.org.mp3"
+    },
+
+    {
+      title: "Pujo Elo Elo Pujo",
+      file: "./ac/Pujo Elo Elo Pujo_spotdown.org.mp3"
+    },
+
+    {
+      title: "Pujo Pujo Gondho",
+      file: "./ac/Pujo Pujo Gondho_spotdown.org.mp3"
+    },
+
+    {
+      title: "Rupang Dehi",
+      file: "./ac/Rupang Dehi_spotdown.org.mp3"
     }
 
   ],

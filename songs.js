@@ -28,7 +28,7 @@ window.AGOMONI_SONGS = {
       title: "Shundori Komola",
       file: "./Shundori Komola.mp3"
     }
-  ],
+    },
     {
       title: "Aaj Baaje_spotdown.org.mp3",
       file: "./ss/Aaj Baaje_spotdown.org.mp3"

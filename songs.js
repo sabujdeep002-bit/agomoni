@@ -80,7 +80,7 @@ window.AGOMONI_SONGS = {
 
     {
       title: "Dhak Baja Kashor Baja",
-      file: "./aa/Dhak Baja Kashor Baja_spotdown.org.mp3"
+      file: "./aa/Dhak Baaja Komor Nacha_spotdown.org.mp3"
     },
 
     /* ===== AB FOLDER ===== */

@@ -29,7 +29,11 @@ window.AGOMONI_SONGS = {
       file: "./Shundori Komola.mp3"
     }
   ],
-
+    {
+      title: "Aaj Baaje_spotdown.org.mp3",
+      file: "./ss/Aaj Baaje_spotdown.org.mp3"
+    }
+  ],
   pandal: [
     {
       title: "Ekta Deshlai Kathi Jwalao",

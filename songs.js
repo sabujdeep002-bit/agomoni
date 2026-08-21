@@ -211,41 +211,40 @@ window.AGOMONI_SONGS = {
       file: "./Tumi Kato Je Dure.mp3"
     }
 
+  ],
+
+  /* ===== PUJO BANGER ===== */
+
+  banger: [{
+      title: "Ami 16 Periye Gachi Howrah Theke Santragachi",
+      file: "./pujo banger/Ami 16 Periye Gachi Howrah Theke Santragachi আমি যেনো পেরিয়ে গেছি Dance cover Puja Biswas - DREAM RUN puja.mp3"
+    },
+
+    {
+      title: "English E Bangla",
+      file: "./pujo banger/English E Bangla - Music Video Slijit Bengali Dance Item Durga Puja Song 2025 Beats Music - Beats.mp3"
+    },
+
+    {
+      title: "KOMOLA - Ankita Bhattacharyya",
+      file: "./pujo banger/KOMOLA - Ankita Bhattacharyya Bengali Folk Song Music Video 2021 Dance - Ankita Bhattacharyya.mp3"
+    },
+
+    {
+      title: "O Menoka O Menoka",
+      file: "./pujo banger/O Menoka O Menoka & ও মেনকা Dance Cover New Durga Puja Song 2024 Dance Star Mou - Dance Star Mou.mp3"
+    },
+
+    {
+      title: "TORI (STUDIO VERSION) - VISHI LEGACY",
+      file: "./pujo banger/TORI (STUDIO VERSION) VISHI LEGACY - Kalamkaar.mp3"
+    },
+
+    {
+      title: "E Faguni Purnima Rate Chol Polaye Jai",
+      file: "./pujo banger/শ্রী ফাগুনী পূর্ণিমা রাতে চল পলায়ে ভাই-ভূতী_ E Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
+    }
+
   ]
 
-},
-
-Banger: [
-
-  {
-    title: "Ami 16 Periye Gachi Howrah Theke Santragachi – Puja Biswas",
-    file: "./pujo banger/Ami 16 Periye Gachi Howrah Theke Santragachi আমি যেনো পেরিয়ে গেছি Dance cover Puja Biswas - DREAM RUN puja.mp3"
-  },
-
-  {
-    title: "English E Bangla – Silajit",
-    file: "./pujo banger/English E Bangla - Music Video Silajit Bengali Dance Item Durga Puja Song 2025 Beats Music - Beats.mp3"
-  },
-
-  {
-    title: "KOMOLA – Ankita Bhattacharyya",
-    file: "./pujo banger/KOMOLA - Ankita Bhattacharyya Bengali Folk Song Music Video 2021 Dance - Ankita Bhattacharyya.mp3"
-  },
-
-  {
-    title: "O Menoka O Menoka – Dance Star Mou",
-    file: "./pujo banger/O Menoka O Menoka & ও মেনকা Dance Cover New Durga Puja Song 2024 Dance Star Mou - Dance Star Mou.mp3"
-  },
-
-  {
-    title: "TORI (STUDIO VERSION) – VISHI LEGACY",
-    file: "./pujo banger/TORI (STUDIO VERSION) VISHI LEGACY - Kalamkaar.mp3"
-  },
-
-  {
-    title: "Ei Faguni Purnima Rate – Bhoomi",
-    file: "./pujo banger/এই ফাগুনী পূর্ণিমা রাতে চল পলাশে রাই-ভুলি_ এ Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
-  }
-
-],
-  };
+};

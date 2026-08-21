@@ -222,7 +222,7 @@ window.AGOMONI_SONGS = {
 
     {
       title: "English E Bangla",
-      file: "./pujo banger//pujo banger/2.mp3"
+      file: "./pujo banger/2.mp3"
     },
 
     {

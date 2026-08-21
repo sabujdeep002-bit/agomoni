@@ -217,7 +217,7 @@ window.AGOMONI_SONGS = {
 
   banger: [{
       title: "Ami 16 Periye Gachi Howrah Theke Santragachi",
-      file: "./pujo banger/Ami 16 Periye Gachi Howrah Theke Santragachi আমি যেনো পেরিয়ে গেছি Dance cover Puja Biswas - DREAM RUN puja.mp3"
+      file: "./pujo banger//Ami 16 Periye Gachi  Howrah Theke Santragachi  আমি ষোলো পেরিয়ে গেছি  Dance cover  Puja Biswas - DREAM RUN puja.mp3"
     },
 
     {

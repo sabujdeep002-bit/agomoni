@@ -222,7 +222,7 @@ window.AGOMONI_SONGS = {
 
     {
       title: "English E Bangla",
-      file: "./pujo banger/2.mp3"
+      file: "./English E Bangla - Music Video  Silajit  Bengali Dance Item  Durga Puja Song 2025  Beats Music - Beats.mp3"
     },
 
     {

@@ -247,4 +247,5 @@ Banger: [
     file: "./pujo banger/এই ফাগুনী পূর্ণিমা রাতে চল পলাশে রাই-ভুলি_ এ Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
   }
 
-];
+],
+  };

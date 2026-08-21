@@ -255,22 +255,22 @@ window.AGOMONI_SONGS = {
 
     {
       title: "Dhaker Taley Poran Jai Jolia Re",
-      file: "./bijoya/Dhaker Taley Poran Jai Jolia Re Dev Subhashree AbhijeetParinitaSudipto Jeet Gannguli SVF - SVF.mp3"
+      file: "./bijoya/Dhaker Taley  Poran Jai Jolia Re  Dev  Subhashree AbhijeetParinitaSudipto  Jeet Gannguli SVF - SVF.mp3"
     },
 
     {
       title: "Joyo Joyo Bijoyagaman",
-      file: "./bijoya/Joyo Joyo Bijoyagaman Video Song DoharIman Chakraborty Raktabeej Nandita ShiboprosadWindows - WINDOWS.mp3"
+      file: "./bijoya/Joyo Joyo Bijoyagaman  Video Song DoharIman Chakraborty Raktabeej Nandita ShiboprosadWindows - WINDOWS.mp3"
     },
 
     {
       title: "Maa Ebar Firbe Barite",
-      file: "./bijoya/Maa Ebar Firbe Barite - Bengali Durga Puja Song Anushka Patra Niharika Nath Shalini Mukherjee - T-Series Bangla.mp3"
+      file: "./bijoya/Maa Ebar Firbe Barite - Bengali Durga Puja Song  Anushka Patra  Niharika Nath  Shalini Mukherjee - T-Series Bangla.mp3"
     },
 
     {
       title: "মা থাকবে কতক্ষণ",
-      file: "./bijoya/মা থাকবে কতক্ষণ (Maa Thakbe Kotokkhon) Saheb C, Kharaj M, Laboni S Partha, AninditaSurinder Films - Surinder Films.mp3"
+      file: "./bijoya/মা থাকবে কতক্ষণ (Maa Thakbe Kotokkhon) Saheb C, Kharaj M, Laboni S Partha, AninditaSurinder Films - Surinder  Films.mp3"
     }
 
   ]

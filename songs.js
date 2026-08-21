@@ -222,27 +222,27 @@ window.AGOMONI_SONGS = {
 
     {
       title: "English E Bangla",
-      file: "./pujo banger/pujo banger/English E Bangla - Music Video  Silajit  Bengali Dance Item  Durga Puja Song 2025  Beats Music - Beats.mp3"
+      file: "./pujo banger//pujo banger/English E Bangla - Music Video  Silajit  Bengali Dance Item  Durga Puja Song 2025  Beats Music - Beats.mp3"
     },
 
     {
       title: "KOMOLA - Ankita Bhattacharyya",
-      file: "./pujo banger/pujo banger/KOMOLA - Ankita Bhattacharyya  Bengali Folk Song  Music Video 2021 Dance - Ankita Bhattacharyya.mp3"
+      file: "./pujo banger/pujo banger//KOMOLA - Ankita Bhattacharyya  Bengali Folk Song  Music Video 2021 Dance - Ankita Bhattacharyya.mp3"
     },
 
     {
       title: "O Menoka O Menoka",
-      file: "./pujo banger/pujo banger/O Menoka O Menoka  ও মেনকা ও মেনকা   Dance Cover  New Durga Puja Song 2024  Dance Star Mou - Dance Star Mou.mp3"
+      file: "./pujo banger/pujo banger//O Menoka O Menoka  ও মেনকা ও মেনকা   Dance Cover  New Durga Puja Song 2024  Dance Star Mou - Dance Star Mou.mp3"
     },
 
     {
       title: "TORI (STUDIO VERSION) - VISHI LEGACY",
-      file: "./pujo banger/pujo banger/TORI (STUDIO VERSION)  VISHI  LEGACY - Kalamkaar.mp3"
+      file: "./pujo banger/pujo banger//TORI (STUDIO VERSION)  VISHI  LEGACY - Kalamkaar.mp3"
     },
 
     {
       title: "E Faguni Purnima Rate Chol Polaye Jai",
-      file: "./pujo banger/pujo banger/এই ফাগুনি পূর্ণিমা রাতে চল পলায়ে যাই--ভূমি_ Ei Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
+      file: "./pujo banger/pujo banger//এই ফাগুনি পূর্ণিমা রাতে চল পলায়ে যাই--ভূমি_ Ei Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
     }
 
   ]

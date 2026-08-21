@@ -215,7 +215,9 @@ window.AGOMONI_SONGS = {
 
   /* ===== PUJO BANGER ===== */
 
-  banger: [{
+  banger: [
+
+    {
       title: "Ami 16 Periye Gachi Howrah Theke Santragachi",
       file: "./pujo banger//Ami 16 Periye Gachi  Howrah Theke Santragachi  আমি ষোলো পেরিয়ে গেছি  Dance cover  Puja Biswas - DREAM RUN puja.mp3"
     },
@@ -243,6 +245,32 @@ window.AGOMONI_SONGS = {
     {
       title: "E Faguni Purnima Rate Chol Polaye Jai",
       file: "./pujo banger/এই ফাগুনি পূর্ণিমা রাতে চল পলায়ে যাই--ভূমি_ Ei Faguni Purnima Rate Chol Polaye Jai by Bhoomi lyrics - Platinum Series (Songs).mp3"
+    }
+
+  ],
+
+  /* ===== BIJOYA ===== */
+
+  bijoya: [
+
+    {
+      title: "Dhaker Taley Poran Jai Jolia Re",
+      file: "./bijoya/Dhaker Taley Poran Jai Jolia Re Dev Subhashree AbhijeetParinitaSudipto Jeet Gannguli SVF - SVF.mp3"
+    },
+
+    {
+      title: "Joyo Joyo Bijoyagaman",
+      file: "./bijoya/Joyo Joyo Bijoyagaman Video Song DoharIman Chakraborty Raktabeej Nandita ShiboprosadWindows - WINDOWS.mp3"
+    },
+
+    {
+      title: "Maa Ebar Firbe Barite",
+      file: "./bijoya/Maa Ebar Firbe Barite - Bengali Durga Puja Song Anushka Patra Niharika Nath Shalini Mukherjee - T-Series Bangla.mp3"
+    },
+
+    {
+      title: "মা থাকবে কতক্ষণ",
+      file: "./bijoya/মা থাকবে কতক্ষণ (Maa Thakbe Kotokkhon) Saheb C, Kharaj M, Laboni S Partha, AninditaSurinder Films - Surinder Films.mp3"
     }
 
   ]

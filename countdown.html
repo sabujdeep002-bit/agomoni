@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agomoni Countdown</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: transparent;
+    color: #fff;
+  }
+  .countdown {
+    width: 100%;
+    max-width: 760px;
+    margin: auto;
+    padding: 24px 14px;
+    text-align: center;
+  }
+  .countdown h2 {
+    margin: 0 0 6px;
+    font-size: clamp(24px, 5vw, 38px);
+    font-weight: 800;
+  }
+  .countdown p {
+    margin: 0 0 20px;
+    opacity: .9;
+    font-size: 15px;
+  }
+  .units {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .unit {
+    min-width: 0;
+    padding: 18px 8px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 16px;
+    background: rgba(255,255,255,.09);
+    backdrop-filter: blur(8px);
+  }
+  .number {
+    display: block;
+    font-size: clamp(28px, 7vw, 52px);
+    line-height: 1;
+    font-weight: 900;
+  }
+  .label {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    opacity: .8;
+  }
+  #done { display:none; font-size: 28px; font-weight: 800; padding: 20px; }
+  @media (max-width: 480px) {
+    .units { gap: 7px; }
+    .unit { padding: 14px 5px; border-radius: 12px; }
+    .label { font-size: 9px; letter-spacing: 1px; }
+  }
+</style>
+</head>
+<body>
+<section class="countdown" aria-live="polite">
+  <h2>মা আসছেন আর...</h2>
+  <p>শুভ মহাষষ্ঠী — ১৬ অক্টোবর ২০২৬</p>
+  <div class="units" id="units">
+    <div class="unit"><span class="number" id="days">00</span><span class="label">DAY</span></div>
+    <div class="unit"><span class="number" id="hours">00</span><span class="label">HOUR</span></div>
+    <div class="unit"><span class="number" id="minutes">00</span><span class="label">MIN</span></div>
+    <div class="unit"><span class="number" id="seconds">00</span><span class="label">SEC</span></div>
+  </div>
+  <div id="done">শুভ মহাষষ্ঠী! 🌺</div>
+</section>
+
+<script>
+(() => {
+  const target = new Date("2026-10-16T00:00:00+05:30").getTime();
+  const $ = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2, "0");
+
+  function update() {
+    const diff = target - Date.now();
+
+    if (diff <= 0) {
+      $("units").style.display = "none";
+      $("done").style.display = "block";
+      return;
+    }
+
+    $("days").textContent = Math.floor(diff / 86400000);
+    $("hours").textContent = pad(Math.floor(diff / 3600000) % 24);
+    $("minutes").textContent = pad(Math.floor(diff / 60000) % 60);
+    $("seconds").textContent = pad(Math.floor(diff / 1000) % 60);
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</body>
+</html>

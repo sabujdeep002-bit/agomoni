@@ -1,1019 +1,566 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090705">
-<title>AGOMONI — Sabujdeep Parbat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Agomoni Countdown</title>
 
 <style>
-:root{
-  --ink:#f7eddc;
-  --muted:#eadcc4;
-  --gold:#e6bd75
+
+*{
+  box-sizing:border-box;
 }
 
-*{box-sizing:border-box}
-
-html,body{
+html,
+body{
   margin:0;
+  padding:0;
   width:100%;
-  height:100%;
-  overflow:hidden;
-  background:#090705;
-  color:var(--ink)
+  min-height:100%;
+  background:transparent;
 }
 
 body{
-  font-family:"Noto Sans Bengali",system-ui,sans-serif
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+
+  color:#fff;
 }
 
-.app{
-  position:relative;
-  height:100svh;
+
+/* ================================
+   COUNTDOWN CONTAINER
+   ================================ */
+
+.countdown{
+
   width:100%;
-  overflow:hidden
+  max-width:620px;
+
+  margin:0 auto;
+
+  padding:5px 8px;
+
+  text-align:center;
 }
 
-.slides{
-  height:100%;
-  display:flex;
-  transition:transform .68s cubic-bezier(.76,0,.2,1);
-  touch-action:pan-y
+
+/* ================================
+   TITLE
+   ================================ */
+
+.countdown h2{
+
+  margin:0 0 2px;
+
+  font-size:
+    clamp(20px,4vw,28px);
+
+  line-height:1.1;
+
+  font-weight:800;
+
+  color:#fff;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.45);
 }
 
-.slide{
-  position:relative;
-  min-width:100%;
-  height:100%;
-  overflow:hidden;
-  background:#090705
-}
 
-.art{
-  position:absolute;
-  inset:0;
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat
-}
+/* ================================
+   DATE TEXT
+   ================================ */
 
-/* Clean background: original image stays untouched. */
-.content{
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:7vw;
-  padding-bottom:170px
-}
+.countdown p{
 
-.eyebrow{
-  letter-spacing:.18em;
-  text-transform:uppercase;
+  margin:0 0 7px;
+
   font-size:11px;
-  color:var(--gold);
-  margin-bottom:14px
-}
 
-h1{
-  font:600 clamp(48px,9vw,110px)/.9 "Noto Serif Bengali",serif;
-  margin:0 0 18px;
-  text-shadow:0 5px 25px #000
-}
+  line-height:1.2;
 
-.subtitle{
-  font-size:16px;
-  line-height:1.5;
-  max-width:560px;
-  color:#f4e8d3
-}
+  color:#fff;
 
-.dots{
-  position:fixed;
-  z-index:30;
-  left:50%;
-  top:22px;
-  transform:translateX(-50%);
-  display:flex;
-  gap:7px
-}
+  opacity:.9;
 
-.dots button{
-  width:7px;
-  height:7px;
-  padding:0;
-  border:0;
-  border-radius:50%;
-  background:#9d927f
-}
-
-.dots button.active{
-  width:22px;
-  border-radius:8px;
-  background:var(--gold)
-}
-
-.nav{
-  position:fixed;
-  z-index:30;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
-  display:flex;
-  flex-direction:column;
-  gap:7px
-}
-
-.nav button{
-  width:32px;
-  height:32px;
-  padding:0;
-  border-radius:50%;
-  background:rgba(15,12,10,.25);
-  border:1px solid rgba(255,244,224,.22);
-  color:var(--ink);
-  font-size:20px
-}
-
-.credit{
-  position:fixed;
-  z-index:30;
-  right:22px;
-  top:20px;
-  font-size:11px;
-  color:rgba(245,234,214,.65)
-}
-
-.insta{
-  position:fixed;
-  z-index:30;
-  left:18px;
-  top:18px;
-  color:var(--ink);
-  text-decoration:none;
-  font-size:11px;
-  padding:8px 11px;
-  border:1px solid rgba(245,234,214,.2);
-  border-radius:999px;
-  background:rgba(9,7,7,.25);
-  backdrop-filter:blur(8px)
+  text-shadow:
+    0 1px 6px rgba(0,0,0,.4);
 }
 
 
-/* =====================================================
-   COUNTDOWN
-   ===================================================== */
+/* ================================
+   FOUR BOXES
+   ================================ */
 
-.countdown-wrap{
-  position:fixed;
-  z-index:35;
-  top:48px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(760px,calc(100% - 30px));
-  height:180px;
-  pointer-events:auto;
-}
+.units{
 
-.countdown-wrap iframe{
-  display:block;
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:6px;
+
   width:100%;
-  height:180px;
-  border:0;
-  overflow:hidden;
-  background:transparent;
 }
 
 
-/* =====================================================
-   MUSIC PLAYER
-   ===================================================== */
+/* ================================
+   EACH BOX
+   ================================ */
 
-.player{
-  position:fixed;
-  z-index:40;
-  left:50%;
-  bottom:16px;
-  transform:translateX(-50%);
-  width:min(680px,calc(100% - 22px));
-  padding:10px 12px;
-  border:1px solid rgba(255,244,224,.22);
-  border-radius:20px;
-  background:rgba(12,9,7,.34);
-  backdrop-filter:blur(22px) saturate(130%);
-  -webkit-backdrop-filter:blur(22px) saturate(130%);
-  box-shadow:0 8px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.08)
-}
+.unit{
 
-.player-top{
-  display:flex;
-  align-items:center;
-  gap:10px
-}
-
-.ctrl{
-  display:flex;
-  align-items:center;
-  gap:5px
-}
-
-.ctrl button{
-  width:29px;
-  height:29px;
-  padding:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,244,224,.18);
-  color:var(--ink);
-  font-size:12px;
-  display:grid;
-  place-items:center
-}
-
-.ctrl button:hover{
-  background:rgba(230,189,117,.16);
-  border-color:rgba(230,189,117,.5)
-}
-
-.play{
-  width:38px;
-  height:38px;
-  padding:0;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(145deg,rgba(230,189,117,.28),rgba(230,189,117,.08));
-  border:1px solid rgba(230,189,117,.62);
-  color:#fff5df;
-  font-size:13px;
-  box-shadow:0 0 18px rgba(230,189,117,.12)
-}
-
-.track{
   min-width:0;
-  flex:1
+
+  padding:8px 5px;
+
+  border:1px solid
+    rgba(255,255,255,.22);
+
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.14),
+      rgba(255,255,255,.06)
+    );
+
+  backdrop-filter:blur(7px);
+
+  -webkit-backdrop-filter:blur(7px);
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.12),
+
+    inset 0 1px 0
+    rgba(255,255,255,.12);
 }
 
-.track-title{
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.01em;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis
+
+/* ================================
+   NUMBER
+   ================================ */
+
+.number{
+
+  display:block;
+
+  font-size:
+    clamp(24px,5vw,38px);
+
+  line-height:1;
+
+  font-weight:900;
+
+  color:#fff;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.3);
 }
 
-.track-page{
-  font-size:8.5px;
-  color:rgba(245,234,214,.58);
-  margin-top:2px;
-  letter-spacing:.04em
+
+/* ================================
+   DAY / HOUR / MIN / SEC
+   ================================ */
+
+.label{
+
+  display:block;
+
+  margin-top:4px;
+
+  font-size:8px;
+
+  line-height:1;
+
+  letter-spacing:1px;
+
+  font-weight:700;
+
+  color:#fff;
+
+  opacity:.8;
 }
 
-.seek{
-  width:100%;
-  height:3px;
-  margin-top:8px;
-  appearance:none;
-  background:rgba(255,244,224,.18);
-  border-radius:99px;
-  cursor:pointer;
-  accent-color:var(--gold)
-}
 
-.seek::-webkit-slider-thumb{
-  appearance:none;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--gold);
-  box-shadow:0 0 10px rgba(230,189,117,.45)
-}
+/* ================================
+   PUJA COMPLETE
+   ================================ */
 
-.seek::-moz-range-thumb{
-  width:9px;
-  height:9px;
-  border:0;
-  border-radius:50%;
-  background:var(--gold)
-}
+#done{
 
-.time{
-  font-size:8.5px;
-  color:rgba(245,234,214,.55);
-  white-space:nowrap
-}
-
-.list{
-  position:relative
-}
-
-#listBtn{
-  font-size:13px
-}
-
-.list-panel{
   display:none;
-  position:absolute;
-  bottom:48px;
-  right:0;
-  width:min(320px,76vw);
-  max-height:240px;
-  overflow:auto;
-  padding:8px;
-  border:1px solid rgba(255,244,224,.18);
-  border-radius:16px;
-  background:rgba(12,9,7,.78);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
-  box-shadow:0 12px 35px rgba(0,0,0,.25)
-}
 
-.list.open .list-panel{
-  display:block
-}
+  padding:10px;
 
-.song{
-  display:flex;
-  gap:8px;
-  width:100%;
-  padding:9px;
-  border:0;
-  border-radius:10px;
-  background:transparent;
-  color:var(--ink);
-  text-align:left;
-  font-size:10px
-}
+  font-size:22px;
 
-.song:hover,
-.song.active{
-  background:rgba(230,189,117,.13)
-}
+  font-weight:800;
 
-.song-num{
-  color:var(--gold);
-  min-width:20px
-}
+  color:#fff;
 
-.song-title{
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis
-}
-
-.volume{
-  width:58px;
-  accent-color:var(--gold)
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.5);
 }
 
 
-/* =====================================================
+/* ================================
    MOBILE
-   ===================================================== */
+   ================================ */
 
-@media(max-width:700px){
+@media(max-width:480px){
 
-  .content{
-    padding:70px 22px 145px;
-    justify-content:flex-end
+  .countdown{
+
+    padding:3px 5px;
+
   }
 
-  h1{
-    font-size:58px
+  .countdown h2{
+
+    font-size:21px;
+
   }
 
-  .subtitle{
-    font-size:14px
+  .countdown p{
+
+    font-size:9px;
+
+    margin-bottom:5px;
+
   }
 
-  .credit{
-    display:none
+  .units{
+
+    gap:4px;
+
   }
 
-  .player{
-    bottom:9px;
-    width:calc(100% - 12px);
-    border-radius:17px;
-    padding:7px 8px
+  .unit{
+
+    padding:7px 3px;
+
+    border-radius:10px;
+
   }
 
-  .volume{
-    display:none
+  .number{
+
+    font-size:27px;
+
   }
 
-  .time{
-    display:none
+  .label{
+
+    font-size:7px;
+
+    margin-top:3px;
+
+    letter-spacing:.8px;
+
   }
 
-  .ctrl button{
-    width:25px;
-    height:25px
-  }
-
-  /* Countdown mobile */
-  .countdown-wrap{
-    top:48px;
-    width:calc(100% - 18px);
-    height:155px
-  }
-
-  .countdown-wrap iframe{
-    height:155px
-  }
-
-  .dots{
-    top:18px
-  }
 }
+
+
+/* ================================
+   VERY SMALL MOBILE
+   ================================ */
+
+@media(max-width:350px){
+
+  .countdown h2{
+
+    font-size:19px;
+
+  }
+
+  .countdown p{
+
+    font-size:8px;
+
+  }
+
+  .number{
+
+    font-size:24px;
+
+  }
+
+  .label{
+
+    font-size:6px;
+
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =====================================================
-     COUNTDOWN — TOP CENTER
-     countdown.html must be in repository root
-     ===================================================== -->
 
-<div class="countdown-wrap">
-  <iframe
-    src="./countdown.html"
-    title="Agomoni Puja Countdown"
-    scrolling="no">
-  </iframe>
-</div>
+<section
+  class="countdown"
+  aria-live="polite"
+>
+
+  <h2>
+    মা আসছেন আর...
+  </h2>
 
 
-<div class="app">
-
-  <div class="slides" id="slides"></div>
-
-  <div class="dots" id="dots"></div>
-
-  <div class="nav">
-    <button id="prev" aria-label="Previous">‹</button>
-    <button id="next" aria-label="Next">›</button>
-  </div>
-
-  <a
-    class="insta"
-    href="https://www.instagram.com/its_mr_sabuj/"
-    target="_blank"
-    rel="noopener">
-    ◎ @its_mr_sabuj
-  </a>
-
-  <div class="credit">
-    Created by Sabujdeep Parbat
-  </div>
+  <p>
+    শুভ মহাষষ্ঠী — ১৬ অক্টোবর ২০২৬
+  </p>
 
 
-  <!-- MUSIC PLAYER -->
+  <div
+    class="units"
+    id="units"
+  >
 
-  <div class="player" id="player">
+    <div class="unit">
 
-    <div class="player-top">
+      <span
+        class="number"
+        id="days"
+      >
+        00
+      </span>
 
-      <div class="ctrl">
-        <button id="prevSong">‹</button>
-
-        <button class="play" id="playBtn">▶</button>
-
-        <button id="nextSong">›</button>
-      </div>
-
-      <div class="track">
-
-        <div class="track-title" id="trackName">
-          Choose a song
-        </div>
-
-        <div class="track-page" id="trackPage">
-          AGOMONI
-        </div>
-
-        <input
-          class="seek"
-          id="seek"
-          type="range"
-          min="0"
-          max="100"
-          value="0">
-
-      </div>
-
-      <div class="time" id="timeEl">
-        0:00 / 0:00
-      </div>
-
-      <div class="list" id="list">
-
-        <button id="listBtn">
-          ☰
-        </button>
-
-        <div class="list-panel" id="playlist"></div>
-
-      </div>
-
-      <input
-        class="volume"
-        id="volume"
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value="1">
+      <span class="label">
+        DAY
+      </span>
 
     </div>
+
+
+    <div class="unit">
+
+      <span
+        class="number"
+        id="hours"
+      >
+        00
+      </span>
+
+      <span class="label">
+        HOUR
+      </span>
+
+    </div>
+
+
+    <div class="unit">
+
+      <span
+        class="number"
+        id="minutes"
+      >
+        00
+      </span>
+
+      <span class="label">
+        MIN
+      </span>
+
+    </div>
+
+
+    <div class="unit">
+
+      <span
+        class="number"
+        id="seconds"
+      >
+        00
+      </span>
+
+      <span class="label">
+        SEC
+      </span>
+
+    </div>
+
   </div>
 
-</div>
+
+  <div id="done">
+    শুভ মহাষষ্ঠী! 🌺
+  </div>
+
+</section>
 
 
-<audio id="audio" preload="metadata"></audio>
-
-<script src="./songs.js"></script>
 
 <script>
 
-const pages = [
-
- {
-   key:"mahalaya",
-   title:"মহালয়া",
-   kicker:"01 · Devi Paksha",
-   image:"./mahalaya.jpg",
-   subtitle:"The call of dawn, agomoni, and the first breath of Sharodotsav."
- },
-
- {
-   key:"durga",
-   title:"দুর্গাপূজা OG's",
-   kicker:"02 · Nostalgia",
-   image:"./durga-puja-ogs.jpg",
-   subtitle:"Old-school Puja songs, familiar streets, and the sound of childhood."
- },
-
- {
-   key:"pandal",
-   title:"প্যান্ডেল Vibe",
-   kicker:"03 · Kolkata",
-   image:"./pandal-vibe.jpg",
-   subtitle:"Lights, crowds, dhak, pandal hopping, and the restless city at Puja."
- },
-
- {
-   key:"banger",
-   title:"পুজো Banger",
-   kicker:"04 · Beats",
-   image:"./pujo-banger.jpg",
-   subtitle:"The loudest beats, colours, energy and Puja madness."
- },
-
- {
-   key:"bijoya",
-   title:"বিজয়া",
-   kicker:"05 · Farewell",
-   image:"./bijoya.jpg",
-   subtitle:"The final moments of Puja — farewell, memories and Asche bochor abar hobe."
- }
-
-];
+(() => {
 
 
-const slides=document.getElementById("slides");
-const dots=document.getElementById("dots");
-const audio=document.getElementById("audio");
+  /*
+   * ================================
+   * PUJA COUNTDOWN DATE
+   * 16 OCTOBER 2026
+   * India Time — GMT +5:30
+   * ================================
+   */
 
-const playBtn=document.getElementById("playBtn");
-
-const prevSongBtn=document.getElementById("prevSong");
-const nextSongBtn=document.getElementById("nextSong");
-
-const list=document.getElementById("list");
-const playlist=document.getElementById("playlist");
-
-const trackName=document.getElementById("trackName");
-const trackPage=document.getElementById("trackPage");
-
-const seek=document.getElementById("seek");
-const timeEl=document.getElementById("timeEl");
-
-const volume=document.getElementById("volume");
+  const target =
+    new Date(
+      "2026-10-16T00:00:00+05:30"
+    ).getTime();
 
 
-let page=0;
-let songIndex=0;
-let wheelLock=false;
+  const days =
+    document.getElementById("days");
+
+  const hours =
+    document.getElementById("hours");
+
+  const minutes =
+    document.getElementById("minutes");
+
+  const seconds =
+    document.getElementById("seconds");
+
+  const units =
+    document.getElementById("units");
+
+  const done =
+    document.getElementById("done");
 
 
-pages.forEach((p,i)=>{
+  function pad(number){
 
-  const s=document.createElement("section");
-
-  s.className="slide";
-
-  s.innerHTML=`
-    <div
-      class="art"
-      style="background-image:url('${p.image}')">
-    </div>
-
-    <div class="content">
-
-      <div class="eyebrow">
-        ${p.kicker}
-      </div>
-
-      <h1>
-        ${p.title}
-      </h1>
-
-      <div class="subtitle">
-        ${p.subtitle}
-      </div>
-
-    </div>
-  `;
-
-  slides.appendChild(s);
-
-
-  const d=document.createElement("button");
-
-  d.setAttribute("aria-label",p.title);
-
-  d.onclick=()=>go(i);
-
-  dots.appendChild(d);
-
-});
-
-
-function currentSongs(){
-
-  return window.AGOMONI_SONGS?.[pages[page].key]||[];
-
-}
-
-
-function format(t){
-
-  if(!Number.isFinite(t))
-    return"0:00";
-
-  const m=Math.floor(t/60);
-
-  const s=Math
-    .floor(t%60)
-    .toString()
-    .padStart(2,"0");
-
-  return`${m}:${s}`;
-
-}
-
-
-function renderPlaylist(){
-
-  playlist.innerHTML="";
-
-  const songs=currentSongs();
-
-
-  if(!songs.length){
-
-    playlist.innerHTML=
-      '<div style="padding:12px;font-size:10px;color:#c7b9a3">Songs will be added soon.</div>';
-
-    return;
+    return String(number)
+      .padStart(2,"0");
 
   }
 
 
-  songs.forEach((s,i)=>{
+  function updateCountdown(){
 
-    const b=document.createElement("button");
+    const now =
+      Date.now();
 
-    b.className=
-      "song"+(i===songIndex?" active":"");
+    const difference =
+      target - now;
 
 
-    b.innerHTML=`
-      <span class="song-num">
-        ${String(i+1).padStart(2,"0")}
-      </span>
+    /*
+     * Puja date reached
+     */
 
-      <span class="song-title">
-        ${s.title}
-      </span>
-    `;
+    if(difference <= 0){
 
+      units.style.display =
+        "none";
 
-    b.onclick=()=>loadSong(i,true);
+      done.style.display =
+        "block";
 
-    playlist.appendChild(b);
-
-  });
-
-}
-
-
-function loadSong(i,autoplay=false){
-
-  const songs=currentSongs();
-
-
-  if(!songs.length){
-
-    audio.removeAttribute("src");
-
-    trackName.textContent="No songs yet";
-
-    trackPage.textContent=pages[page].title;
-
-    playBtn.textContent="▶";
-
-    seek.value=0;
-
-    timeEl.textContent="0:00 / 0:00";
-
-    renderPlaylist();
-
-    return;
-
-  }
-
-
-  songIndex=(i+songs.length)%songs.length;
-
-  const s=songs[songIndex];
-
-
-  audio.src=s.file;
-
-  audio.load();
-
-
-  trackName.textContent=s.title;
-
-  trackPage.textContent=pages[page].title;
-
-
-  renderPlaylist();
-
-
-  if(autoplay){
-
-    audio.play().catch(()=>{});
-
-  }else{
-
-    playBtn.textContent="▶";
-
-    seek.value=0;
-
-    timeEl.textContent="0:00 / 0:00";
-
-  }
-
-}
-
-
-function renderPage(){
-
-  [...dots.children]
-    .forEach((d,i)=>
-      d.classList.toggle("active",i===page)
-    );
-
-  renderPlaylist();
-
-  loadSong(0,false);
-
-}
-
-
-function go(i){
-
-  page=(i+pages.length)%pages.length;
-
-  slides.style.transform=
-    `translateX(-${page*100}%)`;
-
-  songIndex=0;
-
-  renderPage();
-
-}
-
-
-function nextSong(){
-  loadSong(songIndex+1,true);
-}
-
-
-function prevSong(){
-  loadSong(songIndex-1,true);
-}
-
-
-playBtn.onclick=()=>{
-
-  if(!currentSongs().length)
-    return;
-
-  if(!audio.src)
-    loadSong(0,false);
-
-  if(audio.paused)
-    audio.play().catch(()=>{});
-  else
-    audio.pause();
-
-};
-
-
-nextSongBtn.onclick=nextSong;
-
-prevSongBtn.onclick=prevSong;
-
-
-document.getElementById("listBtn").onclick=()=>
-  list.classList.toggle("open");
-
-
-volume.oninput=()=>
-  audio.volume=Number(volume.value);
-
-
-seek.oninput=()=>{
-
-  if(audio.duration)
-
-    audio.currentTime=
-      (Number(seek.value)/100)*
-      audio.duration;
-
-};
-
-
-audio.addEventListener(
-  "play",
-  ()=>playBtn.textContent="❚❚"
-);
-
-
-audio.addEventListener(
-  "pause",
-  ()=>playBtn.textContent="▶"
-);
-
-
-audio.addEventListener(
-  "timeupdate",
-  ()=>{
-
-    if(audio.duration){
-
-      seek.value=
-        (audio.currentTime/audio.duration)*100;
-
-      timeEl.textContent=
-        `${format(audio.currentTime)} / ${format(audio.duration)}`;
-
-    }
-
-  }
-);
-
-
-audio.addEventListener(
-  "ended",
-  nextSong
-);
-
-
-audio.addEventListener(
-  "loadedmetadata",
-  ()=>{
-
-    timeEl.textContent=
-      `0:00 / ${format(audio.duration)}`;
-
-  }
-);
-
-
-document.getElementById("prev").onclick=
-  ()=>go(page-1);
-
-
-document.getElementById("next").onclick=
-  ()=>go(page+1);
-
-
-window.addEventListener("keydown",e=>{
-
-  if(e.key==="ArrowLeft")
-    go(page-1);
-
-  if(e.key==="ArrowRight")
-    go(page+1);
-
-});
-
-
-window.addEventListener(
-  "wheel",
-  e=>{
-
-    if(Math.abs(e.deltaY)<12||wheelLock)
       return;
 
-    if(
-      e.target.closest("#player")||
-      e.target.closest("#playlist")
-    )
-      return;
-
-    wheelLock=true;
-
-    go(page+(e.deltaY>0?1:-1));
-
-    setTimeout(
-      ()=>wheelLock=false,
-      720
-    );
-
-  },
-  {passive:true}
-);
-
-
-let sx=0;
-let sy=0;
-
-
-slides.addEventListener(
-  "touchstart",
-  e=>{
-
-    sx=e.touches[0].clientX;
-
-    sy=e.touches[0].clientY;
-
-  },
-  {passive:true}
-);
-
-
-slides.addEventListener(
-  "touchend",
-  e=>{
-
-    const dx=
-      e.changedTouches[0].clientX-sx;
-
-    const dy=
-      e.changedTouches[0].clientY-sy;
-
-
-    if(
-      Math.abs(dx)>50&&
-      Math.abs(dx)>Math.abs(dy)
-    ){
-
-      go(page+(dx<0?1:-1));
-
     }
 
-    else if(
-      Math.abs(dy)>60&&
-      Math.abs(dy)>Math.abs(dx)
-    ){
 
-      go(page+(dy<0?1:-1));
+    /*
+     * Calculate days
+     */
 
-    }
-
-  },
-  {passive:true}
-);
+    const d =
+      Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+      );
 
 
-renderPage();
+    /*
+     * Calculate hours
+     */
 
-audio.volume=1;
+    const h =
+      Math.floor(
+        (difference %
+          (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+      );
+
+
+    /*
+     * Calculate minutes
+     */
+
+    const m =
+      Math.floor(
+        (difference %
+          (1000 * 60 * 60))
+        /
+        (1000 * 60)
+      );
+
+
+    /*
+     * Calculate seconds
+     */
+
+    const s =
+      Math.floor(
+        (difference %
+          (1000 * 60))
+        /
+        1000
+      );
+
+
+    /*
+     * Update screen
+     */
+
+    days.textContent =
+      d;
+
+    hours.textContent =
+      pad(h);
+
+    minutes.textContent =
+      pad(m);
+
+    seconds.textContent =
+      pad(s);
+
+  }
+
+
+  /*
+   * First update immediately
+   */
+
+  updateCountdown();
+
+
+  /*
+   * Update every second
+   */
+
+  setInterval(
+    updateCountdown,
+    1000
+  );
+
+
+})();
 
 </script>
 
